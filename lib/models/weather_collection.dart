@@ -7,22 +7,16 @@ part 'weather_collection.g.dart';
 
 @JsonSerializable()
 class WeatherCollection {
-  List<dynamic> weather;
-  MainData main;
+  final List<dynamic> weather;
+  final MainData main;
 
   WeatherCollection(this.weather, this.main);
 
-  WeatherData getWeatherData() {
-    return WeatherData(
-        id: weather[0]["id"],
-        main: weather[0]["main"],
-        description: weather[0]["description"],
-        icon: weather[0]["icon"]);
-  }
-
-  MainData getMainData() {
-    return main;
-  }
+  WeatherData getWeatherData() => WeatherData(
+      id: weather[0]["id"],
+      main: weather[0]["main"],
+      description: weather[0]["description"],
+      icon: weather[0]["icon"]);
 
   factory WeatherCollection.fromJson(Map<String, dynamic> json) => _$WeatherCollectionFromJson(json);
 

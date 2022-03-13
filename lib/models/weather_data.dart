@@ -4,5 +4,9 @@ class WeatherData {
   String? description;
   String? icon;
 
-  WeatherData({required this.id, required this.main, required this.description, required this.icon});
+  bool isInitialized(){
+    return id != null;
+  }
+
+  WeatherData({this.id, this.main, this.description, this.icon});
 }
