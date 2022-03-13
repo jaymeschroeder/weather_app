@@ -8,6 +8,10 @@ class UserViewModel extends StateNotifier<User> {
   UserViewModel() : super(const User());
 
   updateName(String name){
-    state = state.copyWith(age: (state.age + 1), name: name);
+    state = state.copyWith(name: name);
+  }
+
+  increaseAge(){
+    state = state.copyWith(age: state.age + 1);
   }
 }
